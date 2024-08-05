@@ -1,0 +1,38 @@
+[1mdiff --git a/CustomXMLParser/main.py b/CustomXMLParser/main.py[m
+[1mindex 56fcf4a..217adeb 100644[m
+[1m--- a/CustomXMLParser/main.py[m
+[1m+++ b/CustomXMLParser/main.py[m
+[36m@@ -287,7 +287,10 @@[m [mclass XmlParser:[m
+ [m
+     def parse(self, file: str) -> Dict:[m
+         st = time.perf_counter()[m
+[31m-        self.process_config()[m
+[32m+[m[41m        [m
+[32m+[m[32m        if self.config_file:[m
+[32m+[m[32m            self.process_config()[m
+[32m+[m[41m        [m
+         if self.parser_type == 'raw':[m
+             self._print(f'Raw xml to dict parsing.', color='yellow')[m
+             return self.load_file(file)[m
+[1mdiff --git a/CustomXMLParser/version.py b/CustomXMLParser/version.py[m
+[1mindex 9c77223..d304ab1 100644[m
+[1m--- a/CustomXMLParser/version.py[m
+[1m+++ b/CustomXMLParser/version.py[m
+[36m@@ -1,4 +1,4 @@[m
+[31m-__version__ = "1.1.0"[m
+[32m+[m[32m__version__ = "1.1.1"[m
+ __author__ = "Muhammad Hamdan <mhamdan.prod@gmail.com>"[m
+ __copyright__ = """[m
+ BSD 3-Clause License[m
+[1mdiff --git a/unittest/unittest.py b/unittest/unittest.py[m
+[1mindex 93267ff..87d6b77 100644[m
+[1m--- a/unittest/unittest.py[m
+[1m+++ b/unittest/unittest.py[m
+[36m@@ -10,4 +10,4 @@[m [mdata = parser.parse(tdx_file)[m
+ out_tdx = tdx_file.replace('.XML', '_mod.XML')[m
+ parser.dump(data, out_tdx, input_format='custom', root='root')[m
+ [m
+[31m-print("Done!!")[m
+\ No newline at end of file[m
+[32m+[m[32mprint("Completed tests successfully!!")[m
+\ No newline at end of file[m

@@ -287,7 +287,10 @@ class XmlParser:
 
     def parse(self, file: str) -> Dict:
         st = time.perf_counter()
-        self.process_config()
+
+        if self.config_file:
+            self.process_config()
+
         if self.parser_type == 'raw':
             self._print(f'Raw xml to dict parsing.', color='yellow')
             return self.load_file(file)

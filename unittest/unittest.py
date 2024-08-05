@@ -10,4 +10,4 @@ data = parser.parse(tdx_file)
 out_tdx = tdx_file.replace('.XML', '_mod.XML')
 parser.dump(data, out_tdx, input_format='custom', root='root')
 
-print("Done!!")
+print("Completed tests successfully!!")
